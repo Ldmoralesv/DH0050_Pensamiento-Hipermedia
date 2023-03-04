@@ -1,30 +1,23 @@
 function setup() {
-  let d = 70;
-  let p1 = d;
-  let p2 = p1 + d;
-  let p3 = p2 + d;
-  let p4 = p3 + d;
+  createCanvas(710, 400, WEBGL);
+}
 
-  // Define el lienzo de 720 pixeles de ancho y 400 de alto
-  createCanvas(720, 400);
-  background(0);
-  noSmooth();
+function draw() {
+  background(100);
 
-  translate(140, 0);
+  noStroke();
+  fill(50);
+  push();
+  translate(-275, 175);
+  rotateY(1.25);
+  rotateX(-0.9);
+  box(100);
+  pop();
 
-  // Dibuja una caja gris
-  stroke(153);
-  line(p3, p3, p2, p3);
-  line(p2, p3, p2, p2);
-  line(p2, p2, p3, p2);
-  line(p3, p2, p3, p3);
-
-  // Dibuja puntos blancos
+  noFill();
   stroke(255);
-  point(p1, p1);
-  point(p1, p3);
-  point(p2, p4);
-  point(p3, p1);
-  point(p4, p2);
-  point(p4, p4);
+  push();
+  translate(500, height * 0.35, -200);
+  sphere(300);
+  pop();
 }
